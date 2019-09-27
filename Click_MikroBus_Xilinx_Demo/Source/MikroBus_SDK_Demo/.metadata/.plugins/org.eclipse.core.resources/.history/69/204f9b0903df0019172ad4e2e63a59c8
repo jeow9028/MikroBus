@@ -1,0 +1,523 @@
+//********************************************
+/*
+	   ____  ____
+      /   /\/   /
+	 /___/  \  /
+     \   \   \/
+	  \   \
+	  /   /
+	 /___/   /\
+	 \   \  /  \
+	  \___\/\___\
+
+	Author: 		Jean-Christophe Owens (jeanchri)
+	Supervisor:		Jayson Bethurem
+	Date: 			Aug 13th 2019
+	Version:		1.0
+
+*/
+
+/***************************** Include Files **********************************/
+//LED
+#include "xil_printf.h"
+#include "xparameters.h"
+#include <stdio.h>
+#include "xspi.h"
+#include "xspi_l.h"
+#include "xtmrctr.h"
+#include "xgpio.h"
+#include "xintc.h"
+#include "xuartlite.h"
+#include "sleep.h"
+
+//Alc
+#include <stdio.h>
+#include "xil_printf.h"
+#include "xiic.h"
+#include "xintc.h"
+#include "xil_exception.h"
+#include "xgpio.h"
+#include "MikroBus.h"
+
+//External
+#include "MikroBus.h"
+
+/************************** Initialize Peripheral ******************************/
+//Comment define if you do not need it
+
+#define TIMER
+#define GPIO
+#define SPI
+#define DELAY_TIM
+#define BIT_SHIFT
+#define BAR_GRAPH
+
+/**************************** Type Definitions ********************************/
+#define BUFFER_SIZE			3
+//Declaration of Write Buffer
+u32 WriteBuffer[BUFFER_SIZE] = {0x0F, 0xC0, 0xFF};
+//#define GPIO_DEVICE_ID_LED  	XPAR_GPIO_1_DEVICE_ID
+//#define GPIO_DEVICE_ID_MR	  	XPAR_GPIO_3_DEVICE_ID
+
+
+#define IIC_dev 			XPAR_MIKROBUS_AXI_IIC_MIKROBUS_DEVICE_ID
+#define int_dev 			XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID
+#define IIC_ADC_ADDR		0x4D
+#define IIC_AFE_ADDR	    0x48
+#define INTC_DEVICE_INT_ID	XPAR_INTC_0_IIC_0_VEC_ID
+#define BUFFER_SIZE		6
+
+/************************** Variable Definitions ******************************/
+
+XSpi 			Spi; 		/* The instance of the SPI device */
+XTmrCtr			Timer;
+XGpio			Gpio_MR;
+XTmrCtr 		TimerCounterInst;  /* The instance of the Timer Counter */
+XIntc			Intr;
+XSpi_Config 	*ConfigPtr;
+/************************** Function Prototypes *******************************/
+//Click 1
+int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr);
+int XTmrCtr_Initialize(XTmrCtr * InstancePtr, u16 DeviceId);
+void delay(int x);	//In milli_seconds
+uint16_t BitShift(uint16_t bit);
+int Mikro_BarGraph(u16 DeviceId, XSpi *SpiInstancePtr);
+void Latch_LED_hold();
+void Latch_LED_insert();
+void Master_Reset();
+void Over_Write_Buffer(u32 W2, u32 W1, u32 W0);
+void EasterEgg();
+
+//Click 2
+int MCP3221_CTRL ();
+int SetUpInterruptSystem();
+void SendHandler(XIic *InstancePtr);
+void ReceiveHandler(XIic *InstancePtr);
+void StatusHandler(XIic *InstancePtr, int Event);
+unsigned concatenate(unsigned x, unsigned y);
+/******************************************************************************/
+
+
+
+
+#define GPIO_DEVICE_ID_MIKROBUS		XPAR_MIKROBUS_AXI_GPIO_MIKROBUS_DEVICE_ID
+#define LED 0x01   /* Assumes bit 0 of GPIO is connected to an LED  */
+
+XGpio 			gpio_led; /* The Instance of the GPIO Driver */
+XGpio			Gpio_MikroBus;
+XIic  			iic;
+XIntc 			InterruptController;
+
+volatile u8 TransmitComplete;
+volatile u8 ReceiveComplete;
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(void)
+{
+	int Status;
+	char input;
+
+	xil_printf("Executing Program Now... \r\n\n");
+
+/**********************************Initialize Blocks*************************************/
+
+
+//**************** Click 1 ****************//
+
+	//Start timer to shift each bit
+	Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+	if (Status != XST_SUCCESS) {
+	xil_printf("Timer Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = XTmrCtr_SelfTest(&Timer, TIMER_COUNTER_0);
+		if (Status != XST_SUCCESS) {
+			xil_printf("Timer Initialization Failed\r\n");
+			return XST_FAILURE;
+	}
+
+	//Mikro Bus Output
+	Status = XGpio_Initialize(&Gpio_MR, GPIO_DEVICE_ID_MIKROBUS);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Gpio Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+
+	//Set as an Outpus
+	XGpio_SetDataDirection(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0);
+
+
+	//Spi
+	Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+	if (Status != XST_SUCCESS) {
+	xil_printf("Spi  Failed TRY AGAIN\r\n");
+	return XST_FAILURE;
+	}
+
+
+
+//**************** Click 2 ****************//
+
+	//Interrupts
+    XIntc_Initialize(&InterruptController, int_dev);
+	SetUpInterruptSystem();
+	iic_conf = XIic_LookupConfig(IIC_dev);
+	Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		 xil_printf("XIic initial is fail \n \r") ;
+		return XST_FAILURE;
+	}
+
+	//GPIO
+	Status = XGpio_Initialize(&Gpio_MikroBus, GPIO_DEVICE_ID_MIKROBUS);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Gpio Initialization Faigpio_led\r\n");
+		return XST_FAILURE;
+	}
+
+	//GPIO FPGA
+	Status = XGpio_Initialize(&gpio_led, GPIO_DEVICE_ID_LED);
+	if (Status != XST_SUCCESS) {
+		xil_printf("LED Gpio Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+
+	//Handlers
+	XIic_SetSendHandler(&iic, &iic,	(XIic_Handler) SendHandler);
+	XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+	XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+
+
+
+/********************************** CONFIG DIRECTIONS ******************************/
+
+
+	//Set direction as an Output
+	XGpio_SetDataDirection(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0);
+
+	//Set direction as an Output
+	XGpio_SetDataDirection(&gpio_led, LED_CHANNEL, 0);
+	//XGpio_DiscreteWrite(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0x00);
+	XGpio_DiscreteWrite(&gpio_led, LED_CHANNEL, 0x0F);
+	xil_printf("Light LEDs \r\n");
+
+	/////////////////////////////////////////////////
+
+	// Select AFE with RST pin
+	XGpio_DiscreteWrite(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0x00); //0x00 for AFE and 0x01 for ADC
+	xil_printf("AFE Enabled \r\n");
+	// Set IIC address to AFE address
+	XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+	XIic_SetOptions(&iic, XII_REPEATED_START_OPTION);
+
+	// Write AFE TIA_CN Register
+
+	XIic_Start(&iic);
+
+
+
+/**********************************START PROGRAM********************************/
+
+	xil_printf("Program Initiating... \r\n\n");
+
+
+	xil_printf("******** Enter in Console Commands Here********* \r\n");
+	xil_printf("1) 1st Led On Green\r\n");
+	xil_printf("2) 2nd Led On Green\r\n");
+	xil_printf("3) 3rd Led On Green\r\n");
+	xil_printf("4) 3rd Led On Green\r\n");
+	xil_printf("5) 3rd Led On Green\r\n");
+	xil_printf("6) 3rd Led On Green\r\n");
+	xil_printf("7) 3rd Led On Green\r\n");
+	xil_printf("8) 3rd Led On Green\r\n");
+	xil_printf("9) 3rd Led On Green\r\n");
+	xil_printf("0) 3rd Led On Green\r\n\n");
+
+	xil_printf("r) All Red\r\n");
+	xil_printf("y) All Yellow\r\n");
+	xil_printf("g) All Green\r\n");
+
+	xil_printf("j) Easter Egg\r\n");
+	xil_printf("**************************************** \r\n\n");
+
+//delay(x) is in Milli_seconds
+	while(1){
+
+		/* Use your Console to input values */
+		input =inbyte();
+//*********************************
+		if (input == '1'){
+		/*Write the 1st LED as Green					| G000000000*/
+			delay(1000);
+			Over_Write_Buffer(0x00, 0x00, 0x01);
+		 }
+
+//*********************************
+
+	}
+	xil_printf("---Exiting main---\n\r");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************************************************/
+
+/*Setup SPI */
+
+int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+{
+	int Status;
+	u32 Enable_Sys;
+	u32 Control;
+	u32 TX;
+	u32 RX;
+//	u32 Chip;
+//	u32 Polarity;
+
+//	***************************** SETUP *************************************
+//Initialize block
+	XSpi_Initialize(SpiInstancePtr, SPI_DEVICE_ID);
+
+//	SpiInstancePtr->SendData = SendBufPtr;
+
+
+	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
+
+	ConfigPtr = XSpi_LookupConfig(DeviceId);
+	if (ConfigPtr == NULL) {
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+//Status of Device
+	Status = XSpi_CfgInitialize(SpiInstancePtr, ConfigPtr,(ConfigPtr->DeviceId));
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+
+//*******************************************************************************
+	 xil_printf("\e[0;31m*****************\e[1;37mXilinx\e[0;31m********************\e[1;32m\r\n");
+
+
+/*
+ * Note:
+ * 		DISABLE Loopback maybe??
+ * 1) Enable SPI
+ * 2) Inhibit transmit
+ * 3) Master Mode
+ * 4) Reset TX & RX fifo
+ */
+
+//ENABLE
+	Enable_Sys = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	Enable_Sys |= XSP_CR_ENABLE_MASK;
+	Enable_Sys &= ~XSP_CR_TRANS_INHIBIT_MASK;
+	XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, Enable_Sys);
+	 xil_printf("Enabled System... \r\n");
+
+//Make Master
+	 Control = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	 Control |= XSP_CR_MASTER_MODE_MASK;		//Make master mode
+	 Control |= XSP_CR_TXFIFO_RESET_MASK;		//Reset TX
+	 Control |= XSP_CR_RXFIFO_RESET_MASK;		//Reset RX
+	 XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, Control);
+	 xil_printf("Master Mode... \r\n");
+
+//TX
+	 TX = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	 TX |= XSP_CR_TXFIFO_RESET_MASK;			//Reset TX
+	 XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, TX);
+//	 xil_printf("TX: %x... \r\n", TX);
+
+
+//RX
+	 RX = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	 RX |= XSP_CR_TXFIFO_RESET_MASK;			//Reset TX
+	 XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, RX);
+//	 xil_printf("RX: %x... \r\n", RX);
+
+
+
+//*******************************************************************************
+//Start SPI
+	XSpi_Start(&Spi);
+	 xil_printf("\e[0;31m**************\e[1;37mRUNNING TEST\e[0;31m*****************\e[1;37m\r\n");
+
+	 // Disable Global interrupt to use polled mode operation
+	 XSpi_IntrGlobalDisable(&Spi);
+
+/*	Transfer = XSpi_Transfer(SpiInstancePtr, SendData, RecvData, BUFFER_SIZE);
+	xil_printf("Transfer Successful... \r\n");
+	xil_printf("SPi: %x \r\n Send: %x \r\n Recv: %x \r\n Byte: %d  \r\n\n", Transfer);
+xil_printf("	Spi: %x \r\n	SendData: %x \r\n	RecvData: %x \r\n	Byte: %x \r\n\n", Status);
+*******************************************/
+	return XST_SUCCESS;
+}
+
+
+
+  /*
+Make a timer for the Spi protocal
+Have it delay to 1000 ms and apply in spi
+Timer 0
+0-100000
+and reset
+*/
+
+#ifdef DELAY_TIM
+void delay(int x){
+//Set a timer incremental (Change value of x [MS])
+	u32 Timer_Value = 0;
+	u32 ResetValue = 0;
+
+	x= (x)*(25000);
+
+	XTmrCtr_Enable(TIMER_BASE, TIMER_COUNTER_0);
+
+	//Counter timer
+	XTmrCtr_SetResetValue(&Timer, TIMER_COUNTER_0, ResetValue);
+	XTmrCtr_Reset(&Timer, TIMER_COUNTER_0);
+	XTmrCtr_Start(&Timer, TIMER_COUNTER_0);
+	Timer_Value = XTmrCtr_GetValue(&Timer, TIMER_COUNTER_0);
+
+	while (1) {
+		Timer_Value = XTmrCtr_GetValue(&Timer, TIMER_COUNTER_0);
+		//compare the value of timer
+			if (Timer_Value > x){
+//				xil_printf("Timer: %d \r\n", Timer_Value);
+				//Read the stopped value
+				XTmrCtr_Stop(&Timer,TIMER_COUNTER_0);
+				XTmrCtr_Reset(&Timer, TIMER_COUNTER_0);
+				break;
+			}
+	}
+	XTmrCtr_Disable(TIMER_BASE, TIMER_COUNTER_0);
+
+}
+#endif
+//*******************************************************************************
+
+
+
+
+#ifdef BIT_SHIFT
+uint16_t BitShift(u16 bit){
+
+	u8 first_byte;
+	u8 second_byte;
+
+	//Start shift
+	second_byte = (uint8_t) bit;		//Cast the value to a u8
+	bit = second_byte &(bit << 8);
+	first_byte = bit;
+	return first_byte;
+}
+#endif
+//*******************************************************************************
+
+
+
+
+
+
+
+/*Make a test file to check spi flow
+8 bit shift register to mimic the chip
+return in main
+*/
+#ifdef BAR_GRAPH
+int Mikro_BarGraph(u16 DeviceId, XSpi *SpiInstancePtr){
+	int i;
+	u32 Test;
+
+//************************** TEST 1 *********************************************
+	 xil_printf("Test Transfer ... \r\n");
+
+//Reset mode
+	 Master_Reset();
+
+//write DTR Register
+//	 XSP_DTR_OFFSET
+	XSpi_WriteReg(ConfigPtr->BaseAddress, XSP_CR_OFFSET, 0x1A2);
+	Test = XSpi_ReadReg(BASE_ADDR, XSP_DTR_OFFSET);
+//	xil_printf("DTR: %x  \n\r", Test);
+
+	//Loop to store Data
+	for(i=0;i<3;i++){ // write in bytes to send
+		XSpi_WriteReg( BASE_ADDR, XSP_DTR_OFFSET, WriteBuffer[i]);
+	}
+
+	return XST_SUCCESS;
+}
+#endif
+//*******************************************************************************
+
+
+
+
+void Latch_LED_hold(){
+	u32 Latch;
+
+ //DIS-ASSERT Chip Select
+	 Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+	 Latch &= ~0x01;
+	 XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+	 xil_printf("Latch Off: %x... \r\n", Latch);
+//	 Delay to give time***********************8
+	 delay(100);
+}
+
+void Latch_LED_insert(){
+	 u32 Latch;
+
+	 //ASSERT Chip Select
+	 Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+	 Latch |= 0x01;
+	 XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+	 xil_printf("Latch On: %x... \r\n\n", Latch);
+	 delay(100);
+}
+
+
+void Master_Reset(){
+	 XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+	 sleep(1);
+//	 xil_printf("MR LOW _HIGH");
+	 XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x1);
+}
+
+void Over_Write_Buffer(u32 W2, u32 W1, u32 W0){
+	WriteBuffer[0] = W2;
+	WriteBuffer[1] = W1;
+	WriteBuffer[2] = W0;
+	Latch_LED_hold();
+	Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+	Latch_LED_insert();
+}
+
+
+
+
+

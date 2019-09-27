@@ -1,0 +1,25 @@
+18:34:49 **** Auto Build of configuration Debug for project LED_BarGraph ****
+make all 
+'Building file: ../src/LED_BarGraph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/LED_BarGraph.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/LED_BarGraph.d" -MT"src/LED_BarGraph.o" -o "src/LED_BarGraph.o" "../src/LED_BarGraph.c"
+../src/LED_BarGraph.c: In function 'Mikro_BarGraph':
+../src/LED_BarGraph.c:474:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/LED_BarGraph.c'
+' '
+'Building target: LED_BarGraph.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LED_BarGraph.elf"  ./src/LED_BarGraph.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LED_BarGraph.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size LED_BarGraph.elf  |tee "LED_BarGraph.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17908	    900	   3344	  22152	   5688	LED_BarGraph.elf
+'Finished building: LED_BarGraph.elf.size'
+' '
+
+18:34:51 Build Finished (took 2s.531ms)
+

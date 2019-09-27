@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Auto Detect" key="MikroBus_s750_wrapper_hw_platform_0-device"/>
+	<item value="MikroBus_s750_wrapper.mmi" key="MikroBus_s750_wrapper_hw_platform_0-bmmFile"/>
+	<item value="MikroBus_s750_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="bootloop" key="MikroBus_s750_wrapper_hw_platform_0-microblaze_0-initElf"/>
+	<item value="Local" key="MikroBus_s750_wrapper_hw_platform_0-target"/>
+	<item value="MikroBus_s750_wrapper.bit" key="MikroBus_s750_wrapper_hw_platform_0-bitFile"/>
+	<item value="false" key="MikroBus_s750_wrapper_hw_platform_0-partial_bit"/>
+</section>

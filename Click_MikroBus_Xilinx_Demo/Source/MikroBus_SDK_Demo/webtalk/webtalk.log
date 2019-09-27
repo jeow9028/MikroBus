@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2543077 on Mon May 13 18:20:51 MDT 2019
+# 
+# Start of session at: Mon Sep 16 15:49:15 2019
+# Process ID: 10640
+# Current directory: C:/Work/Mikroe/Alcohol2/SDK2/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Work/Mikroe/Alcohol2/SDK2/webtalk/webtalk.log
+# Journal file: C:/Work/Mikroe/Alcohol2/SDK2/webtalk\webtalk.jou
+#-----------------------------------------------------------
+INFO: [Common 17-1472] The existence of %HOMEDRIVE%/.Xilinx (e.g. C:/.Xilinx) has been detected.  Due to known issues with the McAffee File and Removable Media Protection (FRP) product, the existance of C:/.Xilinx may cause problems with the Vivado GUI.  If you encounter problems, you can contact IT for assistance with a workaround.  Alternatively, you can move/rename %HOMEDRIVE%:/.Xilinx to a different name such as %APPDATA%/XilinxLicense.
+source sdk_webtalk.tcl
+# webtalk_init -webtalk_dir C:\\Work\\Mikroe\\Alcohol2\\SDK2\\webtalk
+# webtalk_register_client -client project
+# webtalk_add_data -client project -key date_generated -value "2019-09-16 15:49:13" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key product_version -value "SDK v2019.1" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key build_version -value "2019.1" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key os_platform -value "amd64" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key registration_id -value "210830250_134688_210701533_626" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key tool_flow -value "SDK" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key beta -value "false" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key route_design -value "NA" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key target_family -value "NA" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key target_device -value "NA" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key target_package -value "NA" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key target_speed -value "NA" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key random_id -value "p92mahd8hu7ic58hbo0vij7ba3" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key project_id -value "2019.1_6" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key project_iteration -value "6" -context "software_version_and_target_device"
+# webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
+# webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
+# webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz" -context "user_environment"
+# webtalk_add_data -client project -key cpu_speed -value "2712 MHz" -context "user_environment"
+# webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
+# webtalk_add_data -client project -key system_ram -value "17.066 GB" -context "user_environment"
+# webtalk_register_client -client sdk
+# webtalk_add_data -client sdk -key uid -value "1568662323394" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key hwid -value "1568063109629" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key bspid -value "1568063147546" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key newbsp -value "false" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key os -value "standalone" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key apptemplate -value "hello_world" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key RecordType -value "APPCreation" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key LangUsed -value "C" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key Procused -value "microblaze" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key projSize -value "130.0703125" -context "sdk\\\\application/1568662323394"
+# webtalk_add_data -client sdk -key uid -value "NA" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key RecordType -value "ToolUsage" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key BootgenCount -value "0" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key DebugCount -value "14" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key PerfCount -value "0" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key FlashCount -value "0" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key CrossTriggCount -value "0" -context "sdk\\\\bsp/1568670553113"
+# webtalk_add_data -client sdk -key QemuDebugCount -value "0" -context "sdk\\\\bsp/1568670553113"
+# webtalk_transmit -clientid 3619969754 -regid "210830250_134688_210701533_626" -xml C:\\Work\\Mikroe\\Alcohol2\\SDK2\\webtalk\\usage_statistics_ext_sdk.xml -html C:\\Work\\Mikroe\\Alcohol2\\SDK2\\webtalk\\usage_statistics_ext_sdk.html -wdm C:\\Work\\Mikroe\\Alcohol2\\SDK2\\webtalk\\sdk_webtalk.wdm -intro "<H3>SDK Usage Report</H3><BR>"
+# webtalk_terminate
+INFO: [Common 17-206] Exiting Webtalk at Mon Sep 16 15:49:17 2019...

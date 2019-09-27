@@ -1,0 +1,41 @@
+15:51:49 **** Auto Build of configuration Debug for project LBG2 ****
+make all 
+'Building file: ../src/LBG2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/LBG2.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/LBG2.d" -MT"src/LBG2.o" -o "src/LBG2.o" "../src/LBG2.c"
+../src/LBG2.c: In function 'main':
+../src/LBG2.c:52:26: error: 'XPAR_MIKROBUS_AXI_TIMER_0_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_MIKROBUS_AXI_TIMER_MIKROBUS_DEVICE_ID'?
+ #define TIMER_DEVICE_ID  XPAR_MIKROBUS_AXI_TIMER_0_DEVICE_ID
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/LBG2.c:52:26: note: in definition of macro 'TIMER_DEVICE_ID'
+ #define TIMER_DEVICE_ID  XPAR_MIKROBUS_AXI_TIMER_0_DEVICE_ID
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/LBG2.c:52:26: note: each undeclared identifier is reported only once for each function it appears in
+ #define TIMER_DEVICE_ID  XPAR_MIKROBUS_AXI_TIMER_0_DEVICE_ID
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/LBG2.c:52:26: note: in definition of macro 'TIMER_DEVICE_ID'
+ #define TIMER_DEVICE_ID  XPAR_MIKROBUS_AXI_TIMER_0_DEVICE_ID
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../../standalone_bsp_0/microblaze_0/include/xtmrctr.h:180,
+                 from ../src/LBG2.c:26:
+../src/LBG2.c: In function 'delay':
+../src/LBG2.c:53:22: error: 'XPAR_MIKROBUS_AXI_TIMER_0_BASEADDR' undeclared (first use in this function); did you mean 'XPAR_MIKROBUS_AXI_TIMER_MIKROBUS_BASEADDR'?
+ #define TIMER_BASE   XPAR_MIKROBUS_AXI_TIMER_0_BASEADDR
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../standalone_bsp_0/microblaze_0/include/xtmrctr_l.h:219:14: note: in definition of macro 'XTmrCtr_WriteReg'
+  Xil_Out32(((BaseAddress) + XTmrCtr_Offsets[(TmrCtrNumber)] + \
+              ^~~~~~~~~~~
+../src/LBG2.c:416:2: note: in expansion of macro 'XTmrCtr_Enable'
+  XTmrCtr_Enable(TIMER_BASE, TIMER_COUNTER_0);
+  ^~~~~~~~~~~~~~
+../src/LBG2.c:416:17: note: in expansion of macro 'TIMER_BASE'
+  XTmrCtr_Enable(TIMER_BASE, TIMER_COUNTER_0);
+                 ^~~~~~~~~~
+../src/LBG2.c: In function 'Mikro_BarGraph':
+../src/LBG2.c:478:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/LBG2.o] Error 1
+
+15:51:50 Build Finished (took 1s.74ms)
+

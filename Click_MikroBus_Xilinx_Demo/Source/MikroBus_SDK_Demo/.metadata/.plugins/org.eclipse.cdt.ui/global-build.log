@@ -1,0 +1,2786 @@
+20:32:25 **** Clean-only build of configuration Debug for project Alcohol2 ****
+make clean 
+rm -rf  ./src/alcohol2.o ./src/platform.o  ./src/alcohol2.d ./src/platform.d  Alcohol2.elf.size  Alcohol2.elf
+' '
+20:32:26 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+make -C microblaze_0/libsrc/bram_v4_3/src -s clean 
+make -C microblaze_0/libsrc/cpu_v2_9/src -s clean 
+make -C microblaze_0/libsrc/gpio_v4_4/src -s clean 
+make -C microblaze_0/libsrc/iic_v3_5/src -s clean 
+make -C microblaze_0/libsrc/intc_v3_9/src -s clean 
+make -C microblaze_0/libsrc/spi_v4_4/src -s clean 
+make -C microblaze_0/libsrc/standalone_v7_0/src -s clean 
+make -C microblaze_0/libsrc/sysmon_v7_5/src -s clean 
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s clean 
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s clean 
+rm -f microblaze_0/lib/libxil.a
+20:32:28 **** Build of project standalone_bsp_0 ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_9/src"
+make -C microblaze_0/libsrc/intc_v3_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/spi_v4_4/src"
+make -C microblaze_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/sysmon_v7_5/src"
+make -C microblaze_0/libsrc/sysmon_v7_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+mb-ar: creating ../../../lib/libxil.a
+"Running Make libs in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling iic"
+"Running Make libs in microblaze_0/libsrc/intc_v3_9/src"
+make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/spi_v4_4/src"
+make -C microblaze_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling spi"
+"Running Make libs in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/sysmon_v7_5/src"
+make -C microblaze_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling sysmon"
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tmrctr"
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+'Finished building libraries'
+20:33:09 **** Auto Build of configuration Debug for project LED_BarGraph ****
+make all 
+'Building file: ../src/LED_BarGraph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/LED_BarGraph.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/LED_BarGraph.d" -MT"src/LED_BarGraph.o" -o "src/LED_BarGraph.o" "../src/LED_BarGraph.c"
+../src/LED_BarGraph.c: In function 'Mikro_BarGraph':
+../src/LED_BarGraph.c:474:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/LED_BarGraph.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LED_BarGraph.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LED_BarGraph.elf"  ./src/LED_BarGraph.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LED_BarGraph.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size LED_BarGraph.elf  |tee "LED_BarGraph.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17908	    900	   3344	  22152	   5688	LED_BarGraph.elf
+'Finished building: LED_BarGraph.elf.size'
+' '
+20:33:13 **** Auto Build of configuration Debug for project Hello ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: Hello.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Hello.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Hello.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Hello.elf  |tee "Hello.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9188	    816	   3148	  13152	   3360	Hello.elf
+'Finished building: Hello.elf.size'
+' '
+20:33:16 **** Build of configuration Debug for project Alcohol2 ****
+make all 
+'Building file: ../src/alcohol2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/alcohol2.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/alcohol2.d" -MT"src/alcohol2.o" -o "src/alcohol2.o" "../src/alcohol2.c"
+../src/alcohol2.c: In function 'MCP3221_CTRL':
+../src/alcohol2.c:172:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/alcohol2.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: Alcohol2.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Alcohol2.elf"  ./src/alcohol2.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Alcohol2.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Alcohol2.elf  |tee "Alcohol2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17080	    864	   6472	  24416	   5f60	Alcohol2.elf
+'Finished building: Alcohol2.elf.size'
+' '
+20:34:03 **** Incremental Build of configuration Debug for project Alcohol2 ****
+make all 
+make: Nothing to be done for 'all'.
+13:00:57 **** Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3124	    400	   3108	   6632	   19e8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:01:10 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: in function `_crtinit':
+(.text+0x78): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: 2Clicks_Alc_LED.elf] Error 1
+13:01:28 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:56:10: fatal error: MikroBus.h: No such file or directory
+ #include "MikroBus.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:01:42 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3124	    400	   3108	   6632	   19e8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:02:20 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:19:10: fatal error: MikroBus.h: No such file or directory
+ #include "MikroBus.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:02:36 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:69:39: error: 'GPIO_DEVICE_ID_LED' undeclared (first use in this function); did you mean 'GPIO_DEVICE_ID_MIKROBUS'?
+  Status = XGpio_Initialize(&gpio_led, GPIO_DEVICE_ID_LED);
+                                       ^~~~~~~~~~~~~~~~~~
+                                       GPIO_DEVICE_ID_MIKROBUS
+../src/helloworld.c:69:39: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:82:44: error: 'GPIO_MENB_CHANNEL' undeclared (first use in this function)
+     XGpio_SetDataDirection(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0);
+                                            ^~~~~~~~~~~~~~~~~
+../src/helloworld.c:85:39: error: 'LED_CHANNEL' undeclared (first use in this function)
+     XGpio_SetDataDirection(&gpio_led, LED_CHANNEL, 0);
+                                       ^~~~~~~~~~~
+../src/helloworld.c: In function 'MCP3221_CTRL':
+../src/helloworld.c:168:39: error: 'GPIO_MENB_CHANNEL' undeclared (first use in this function)
+   XGpio_DiscreteWrite(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0x01); //0x00 for AFE and 0x01 for ADC
+                                       ^~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:02:46 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'MCP3221_CTRL':
+../src/helloworld.c:135:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17080	    864	   3400	  21344	   5360	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:04:24 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'MCP3221_CTRL':
+../src/helloworld.c:146:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17080	    864	   3400	  21344	   5360	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:07:24 **** Auto Build of configuration Debug for project Alcohol2 ****
+make all 
+'Building file: ../src/alcohol2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/alcohol2.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/alcohol2.d" -MT"src/alcohol2.o" -o "src/alcohol2.o" "../src/alcohol2.c"
+../src/alcohol2.c:98: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/alcohol2.c:86: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/alcohol2.c: In function 'MCP3221_CTRL':
+../src/alcohol2.c:244:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/alcohol2.c'
+' '
+'Building target: Alcohol2.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Alcohol2.elf"  ./src/alcohol2.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Alcohol2.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Alcohol2.elf  |tee "Alcohol2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17080	    864	   6688	  24632	   6038	Alcohol2.elf
+'Finished building: Alcohol2.elf.size'
+' '
+13:09:00 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:281:29: error: unknown type name 'XSpi'; did you mean 'XGpio'?
+  int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+                             ^~~~
+                             XGpio
+../src/helloworld.c: In function 'Latch_LED_hold':
+../src/helloworld.c:484:13: warning: implicit declaration of function 'XSpi_ReadReg'; did you mean 'XGpio_ReadReg'? [-Wimplicit-function-declaration]
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+             ^~~~~~~~~~~~
+             XGpio_ReadReg
+../src/helloworld.c:484:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/helloworld.c:484:37: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:486:4: warning: implicit declaration of function 'XSpi_WriteReg'; did you mean 'XGpio_WriteReg'? [-Wimplicit-function-declaration]
+    XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+    ^~~~~~~~~~~~~
+    XGpio_WriteReg
+../src/helloworld.c:489:4: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+    delay(100);
+    ^~~~~
+../src/helloworld.c: In function 'Latch_LED_insert':
+../src/helloworld.c:496:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/helloworld.c: In function 'Master_Reset':
+../src/helloworld.c:505:25: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+    XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+                         ^~~~~~~
+                         gpio_led
+../src/helloworld.c: In function 'Over_Write_Buffer':
+../src/helloworld.c:512:3: error: 'WriteBuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   WriteBuffer[0] = W2;
+   ^~~~~~~~~~~
+   setbuffer
+../src/helloworld.c:516:3: warning: implicit declaration of function 'Mikro_BarGraph' [-Wimplicit-function-declaration]
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+   ^~~~~~~~~~~~~~
+../src/helloworld.c:516:34: error: 'Spi' undeclared (first use in this function)
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+                                  ^~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:13:10 **** Clean-only build of configuration Debug for project 2Clicks_Alc_LED ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  2Clicks_Alc_LED.elf.size  2Clicks_Alc_LED.elf
+' '
+13:13:10 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:281:29: error: unknown type name 'XSpi'; did you mean 'XGpio'?
+  int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+                             ^~~~
+                             XGpio
+../src/2Clicks.c: In function 'Latch_LED_hold':
+../src/2Clicks.c:484:13: warning: implicit declaration of function 'XSpi_ReadReg'; did you mean 'XGpio_ReadReg'? [-Wimplicit-function-declaration]
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+             ^~~~~~~~~~~~
+             XGpio_ReadReg
+../src/2Clicks.c:484:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c:484:37: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:486:4: warning: implicit declaration of function 'XSpi_WriteReg'; did you mean 'XGpio_WriteReg'? [-Wimplicit-function-declaration]
+    XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+    ^~~~~~~~~~~~~
+    XGpio_WriteReg
+../src/2Clicks.c:489:4: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+    delay(100);
+    ^~~~~
+../src/2Clicks.c: In function 'Latch_LED_insert':
+../src/2Clicks.c:496:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c: In function 'Master_Reset':
+../src/2Clicks.c:505:25: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+    XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+                         ^~~~~~~
+                         gpio_led
+../src/2Clicks.c: In function 'Over_Write_Buffer':
+../src/2Clicks.c:512:3: error: 'WriteBuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   WriteBuffer[0] = W2;
+   ^~~~~~~~~~~
+   setbuffer
+../src/2Clicks.c:516:3: warning: implicit declaration of function 'Mikro_BarGraph' [-Wimplicit-function-declaration]
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+   ^~~~~~~~~~~~~~
+../src/2Clicks.c:516:34: error: 'Spi' undeclared (first use in this function)
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+                                  ^~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:14:10 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:283:29: error: unknown type name 'XSpi'; did you mean 'XGpio'?
+  int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+                             ^~~~
+                             XGpio
+../src/2Clicks.c: In function 'Latch_LED_hold':
+../src/2Clicks.c:486:13: warning: implicit declaration of function 'XSpi_ReadReg'; did you mean 'XGpio_ReadReg'? [-Wimplicit-function-declaration]
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+             ^~~~~~~~~~~~
+             XGpio_ReadReg
+../src/2Clicks.c:486:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c:486:37: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:488:4: warning: implicit declaration of function 'XSpi_WriteReg'; did you mean 'XGpio_WriteReg'? [-Wimplicit-function-declaration]
+    XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+    ^~~~~~~~~~~~~
+    XGpio_WriteReg
+../src/2Clicks.c:491:4: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+    delay(100);
+    ^~~~~
+../src/2Clicks.c: In function 'Latch_LED_insert':
+../src/2Clicks.c:498:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c: In function 'Master_Reset':
+../src/2Clicks.c:507:25: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+    XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+                         ^~~~~~~
+                         gpio_led
+../src/2Clicks.c: In function 'Over_Write_Buffer':
+../src/2Clicks.c:514:3: error: 'WriteBuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   WriteBuffer[0] = W2;
+   ^~~~~~~~~~~
+   setbuffer
+../src/2Clicks.c:518:3: warning: implicit declaration of function 'Mikro_BarGraph' [-Wimplicit-function-declaration]
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+   ^~~~~~~~~~~~~~
+../src/2Clicks.c:518:34: error: 'Spi' undeclared (first use in this function)
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+                                  ^~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:15:41 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:88:11: warning: implicit declaration of function 'XTmrCtr_Initialize'; did you mean 'XIntc_Initialize'? [-Wimplicit-function-declaration]
+  Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+           ^~~~~~~~~~~~~~~~~~
+           XIntc_Initialize
+../src/2Clicks.c:88:31: error: 'Timer' undeclared (first use in this function); did you mean 'timer_t'?
+  Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+                               ^~~~~
+                               timer_t
+../src/2Clicks.c:88:31: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:94:11: warning: implicit declaration of function 'XTmrCtr_SelfTest'; did you mean 'XIntc_SelfTest'? [-Wimplicit-function-declaration]
+  Status = XTmrCtr_SelfTest(&Timer, TIMER_COUNTER_0);
+           ^~~~~~~~~~~~~~~~
+           XIntc_SelfTest
+../src/2Clicks.c:101:29: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+  Status = XGpio_Initialize(&Gpio_MR, GPIO_DEVICE_ID_MIKROBUS);
+                             ^~~~~~~
+                             gpio_led
+../src/2Clicks.c: At top level:
+../src/2Clicks.c:313:29: error: unknown type name 'XSpi'; did you mean 'XGpio'?
+  int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+                             ^~~~
+                             XGpio
+../src/2Clicks.c: In function 'Latch_LED_hold':
+../src/2Clicks.c:516:13: warning: implicit declaration of function 'XSpi_ReadReg'; did you mean 'XGpio_ReadReg'? [-Wimplicit-function-declaration]
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+             ^~~~~~~~~~~~
+             XGpio_ReadReg
+../src/2Clicks.c:516:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c:518:4: warning: implicit declaration of function 'XSpi_WriteReg'; did you mean 'XGpio_WriteReg'? [-Wimplicit-function-declaration]
+    XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+    ^~~~~~~~~~~~~
+    XGpio_WriteReg
+../src/2Clicks.c:521:4: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+    delay(100);
+    ^~~~~
+../src/2Clicks.c: In function 'Latch_LED_insert':
+../src/2Clicks.c:528:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c: In function 'Master_Reset':
+../src/2Clicks.c:537:25: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+    XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+                         ^~~~~~~
+                         gpio_led
+../src/2Clicks.c: In function 'Over_Write_Buffer':
+../src/2Clicks.c:544:3: error: 'WriteBuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   WriteBuffer[0] = W2;
+   ^~~~~~~~~~~
+   setbuffer
+../src/2Clicks.c:548:3: warning: implicit declaration of function 'Mikro_BarGraph' [-Wimplicit-function-declaration]
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+   ^~~~~~~~~~~~~~
+../src/2Clicks.c:548:34: error: 'Spi' undeclared (first use in this function)
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+                                  ^~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:16:23 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:88:11: warning: implicit declaration of function 'XTmrCtr_Initialize'; did you mean 'XIntc_Initialize'? [-Wimplicit-function-declaration]
+  Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+           ^~~~~~~~~~~~~~~~~~
+           XIntc_Initialize
+../src/2Clicks.c:88:31: error: 'Timer' undeclared (first use in this function); did you mean 'timer_t'?
+  Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+                               ^~~~~
+                               timer_t
+../src/2Clicks.c:88:31: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:94:11: warning: implicit declaration of function 'XTmrCtr_SelfTest'; did you mean 'XIntc_SelfTest'? [-Wimplicit-function-declaration]
+  Status = XTmrCtr_SelfTest(&Timer, TIMER_COUNTER_0);
+           ^~~~~~~~~~~~~~~~
+           XIntc_SelfTest
+../src/2Clicks.c:101:29: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+  Status = XGpio_Initialize(&Gpio_MR, GPIO_DEVICE_ID_MIKROBUS);
+                             ^~~~~~~
+                             gpio_led
+../src/2Clicks.c:108:11: warning: implicit declaration of function 'Spi_Test'; did you mean 'XIic_Reset'? [-Wimplicit-function-declaration]
+  Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+           ^~~~~~~~
+           XIic_Reset
+../src/2Clicks.c:108:36: error: 'Spi' undeclared (first use in this function)
+  Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+                                    ^~~
+../src/2Clicks.c: At top level:
+../src/2Clicks.c:321:29: error: unknown type name 'XSpi'; did you mean 'XGpio'?
+  int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+                             ^~~~
+                             XGpio
+../src/2Clicks.c: In function 'Latch_LED_hold':
+../src/2Clicks.c:524:13: warning: implicit declaration of function 'XSpi_ReadReg'; did you mean 'XGpio_ReadReg'? [-Wimplicit-function-declaration]
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+             ^~~~~~~~~~~~
+             XGpio_ReadReg
+../src/2Clicks.c:524:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c:526:4: warning: implicit declaration of function 'XSpi_WriteReg'; did you mean 'XGpio_WriteReg'? [-Wimplicit-function-declaration]
+    XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+    ^~~~~~~~~~~~~
+    XGpio_WriteReg
+../src/2Clicks.c:529:4: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+    delay(100);
+    ^~~~~
+../src/2Clicks.c: In function 'Latch_LED_insert':
+../src/2Clicks.c:536:37: error: 'XSP_SSR_OFFSET' undeclared (first use in this function); did you mean 'XIN_ISR_OFFSET'?
+    Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+                                     ^~~~~~~~~~~~~~
+                                     XIN_ISR_OFFSET
+../src/2Clicks.c: In function 'Master_Reset':
+../src/2Clicks.c:545:25: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+    XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+                         ^~~~~~~
+                         gpio_led
+../src/2Clicks.c: In function 'Over_Write_Buffer':
+../src/2Clicks.c:552:3: error: 'WriteBuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   WriteBuffer[0] = W2;
+   ^~~~~~~~~~~
+   setbuffer
+../src/2Clicks.c:556:3: warning: implicit declaration of function 'Mikro_BarGraph' [-Wimplicit-function-declaration]
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+   ^~~~~~~~~~~~~~
+../src/2Clicks.c:556:34: error: 'Spi' undeclared (first use in this function)
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+                                  ^~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:18:01 **** Auto Build of configuration Debug for project Alcohol2 ****
+make all 
+'Building file: ../src/alcohol2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/alcohol2.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/alcohol2.d" -MT"src/alcohol2.o" -o "src/alcohol2.o" "../src/alcohol2.c"
+../src/alcohol2.c: In function 'MCP3221_CTRL':
+../src/alcohol2.c:172:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/alcohol2.c'
+' '
+'Building target: Alcohol2.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Alcohol2.elf"  ./src/alcohol2.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Alcohol2.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Alcohol2.elf  |tee "Alcohol2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17080	    864	   6472	  24416	   5f60	Alcohol2.elf
+'Finished building: Alcohol2.elf.size'
+' '
+13:22:26 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:100:31: error: 'Timer' undeclared (first use in this function); did you mean 'timer_t'?
+  Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+                               ^~~~~
+                               timer_t
+../src/2Clicks.c:100:31: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:113:29: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+  Status = XGpio_Initialize(&Gpio_MR, GPIO_DEVICE_ID_MIKROBUS);
+                             ^~~~~~~
+                             gpio_led
+../src/2Clicks.c:120:11: warning: implicit declaration of function 'Spi_Test'; did you mean 'XSpi_Reset'? [-Wimplicit-function-declaration]
+  Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+           ^~~~~~~~
+           XSpi_Reset
+../src/2Clicks.c:120:36: error: 'Spi' undeclared (first use in this function); did you mean 'XSpi'?
+  Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+                                    ^~~
+                                    XSpi
+../src/2Clicks.c: At top level:
+../src/2Clicks.c:333:6: error: conflicting types for 'Spi_Test'
+  int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+      ^~~~~~~~
+../src/2Clicks.c:334:2: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+  {
+  ^
+../src/2Clicks.c:120:11: note: previous implicit declaration of 'Spi_Test' was here
+  Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+           ^~~~~~~~
+../src/2Clicks.c: In function 'Spi_Test':
+../src/2Clicks.c:409:15: error: 'Spi' undeclared (first use in this function); did you mean 'XSpi'?
+   XSpi_Start(&Spi);
+               ^~~
+               XSpi
+../src/2Clicks.c: In function 'Latch_LED_hold':
+../src/2Clicks.c:541:4: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+    delay(100);
+    ^~~~~
+../src/2Clicks.c: In function 'Master_Reset':
+../src/2Clicks.c:557:25: error: 'Gpio_MR' undeclared (first use in this function); did you mean 'gpio_led'?
+    XGpio_DiscreteWrite(&Gpio_MR, GPIO_MR_LEDBG_CHANNEL, 0x0);
+                         ^~~~~~~
+                         gpio_led
+../src/2Clicks.c: In function 'Over_Write_Buffer':
+../src/2Clicks.c:564:3: error: 'WriteBuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   WriteBuffer[0] = W2;
+   ^~~~~~~~~~~
+   setbuffer
+../src/2Clicks.c:568:3: warning: implicit declaration of function 'Mikro_BarGraph' [-Wimplicit-function-declaration]
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+   ^~~~~~~~~~~~~~
+../src/2Clicks.c:568:34: error: 'Spi' undeclared (first use in this function); did you mean 'XSpi'?
+   Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+                                  ^~~
+                                  XSpi
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:28:12 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:474:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/2Clicks.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17908	    900	   3344	  22152	   5688	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:30:45 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:367:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15800	    900	   3340	  20040	   4e48	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:31:50 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:362:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15800	    900	   3340	  20040	   4e48	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:34:54 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:124:23: error: 'InterruptController' undeclared (first use in this function); did you mean 'XInterruptHandler'?
+     XIntc_Initialize(&InterruptController, int_dev);
+                       ^~~~~~~~~~~~~~~~~~~
+                       XInterruptHandler
+../src/2Clicks.c:124:23: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:124:44: error: 'int_dev' undeclared (first use in this function); did you mean 'index'?
+     XIntc_Initialize(&InterruptController, int_dev);
+                                            ^~~~~~~
+                                            index
+../src/2Clicks.c:125:2: warning: implicit declaration of function 'SetUpInterruptSystem'; did you mean 'XIntc_InterruptHandler'? [-Wimplicit-function-declaration]
+  SetUpInterruptSystem();
+  ^~~~~~~~~~~~~~~~~~~~
+  XIntc_InterruptHandler
+../src/2Clicks.c:126:2: error: 'iic_conf' undeclared (first use in this function); did you mean 'viscanf'?
+  iic_conf = XIic_LookupConfig(IIC_dev);
+  ^~~~~~~~
+  viscanf
+../src/2Clicks.c:126:13: warning: implicit declaration of function 'XIic_LookupConfig'; did you mean 'XIntc_LookupConfig'? [-Wimplicit-function-declaration]
+  iic_conf = XIic_LookupConfig(IIC_dev);
+             ^~~~~~~~~~~~~~~~~
+             XIntc_LookupConfig
+../src/2Clicks.c:126:31: error: 'IIC_dev' undeclared (first use in this function)
+  iic_conf = XIic_LookupConfig(IIC_dev);
+                               ^~~~~~~
+../src/2Clicks.c:127:12: warning: implicit declaration of function 'XIic_CfgInitialize'; did you mean 'XGpio_CfgInitialize'? [-Wimplicit-function-declaration]
+  Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+            ^~~~~~~~~~~~~~~~~~
+            XGpio_CfgInitialize
+../src/2Clicks.c:127:32: error: 'iic' undeclared (first use in this function)
+  Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+                                ^~~
+../src/2Clicks.c:134:29: error: 'Gpio_MikroBus' undeclared (first use in this function)
+  Status = XGpio_Initialize(&Gpio_MikroBus, GPIO_DEVICE_ID_MIKROBUS);
+                             ^~~~~~~~~~~~~
+../src/2Clicks.c:141:29: error: 'gpio_led' undeclared (first use in this function); did you mean 'Gpio_MR'?
+  Status = XGpio_Initialize(&gpio_led, GPIO_DEVICE_ID_LED);
+                             ^~~~~~~~
+                             Gpio_MR
+../src/2Clicks.c:148:2: warning: implicit declaration of function 'XIic_SetSendHandler'; did you mean 'XUartLite_SetSendHandler'? [-Wimplicit-function-declaration]
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+  ^~~~~~~~~~~~~~~~~~~
+  XUartLite_SetSendHandler
+../src/2Clicks.c:148:35: error: 'XIic_Handler' undeclared (first use in this function); did you mean 'XNullHandler'?
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+                                   ^~~~~~~~~~~~
+                                   XNullHandler
+../src/2Clicks.c:148:48: error: expected ')' before 'SendHandler'
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+                                                ^~~~~~~~~~~~
+                                                )
+../src/2Clicks.c:149:2: warning: implicit declaration of function 'XIic_SetRecvHandler'; did you mean 'XUartLite_SetRecvHandler'? [-Wimplicit-function-declaration]
+  XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+  ^~~~~~~~~~~~~~~~~~~
+  XUartLite_SetRecvHandler
+../src/2Clicks.c:149:48: error: expected ')' before 'ReceiveHandler'
+  XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+                                                ^~~~~~~~~~~~~~~
+                                                )
+../src/2Clicks.c:150:2: warning: implicit declaration of function 'XIic_SetStatusHandler'; did you mean 'XSpi_SetStatusHandler'? [-Wimplicit-function-declaration]
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+  ^~~~~~~~~~~~~~~~~~~~~
+  XSpi_SetStatusHandler
+../src/2Clicks.c:150:36: error: 'XIic_StatusHandler' undeclared (first use in this function); did you mean 'XSpi_StatusHandler'?
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+                                    ^~~~~~~~~~~~~~~~~~
+                                    XSpi_StatusHandler
+../src/2Clicks.c:150:55: error: expected ')' before 'StatusHandler'
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+                                                       ^~~~~~~~~~~~~~
+                                                       )
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:401:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:36:25 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:78:18: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ void SendHandler(XIic *InstancePtr);
+                  ^~~~
+                  XIntc
+../src/2Clicks.c:79:21: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ void ReceiveHandler(XIic *InstancePtr);
+                     ^~~~
+                     XIntc
+../src/2Clicks.c:80:20: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ void StatusHandler(XIic *InstancePtr, int Event);
+                    ^~~~
+                    XIntc
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:149:23: error: 'InterruptController' undeclared (first use in this function); did you mean 'XInterruptHandler'?
+     XIntc_Initialize(&InterruptController, int_dev);
+                       ^~~~~~~~~~~~~~~~~~~
+                       XInterruptHandler
+../src/2Clicks.c:149:23: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:149:44: error: 'int_dev' undeclared (first use in this function); did you mean 'index'?
+     XIntc_Initialize(&InterruptController, int_dev);
+                                            ^~~~~~~
+                                            index
+../src/2Clicks.c:151:2: error: 'iic_conf' undeclared (first use in this function); did you mean 'viscanf'?
+  iic_conf = XIic_LookupConfig(IIC_dev);
+  ^~~~~~~~
+  viscanf
+../src/2Clicks.c:151:13: warning: implicit declaration of function 'XIic_LookupConfig'; did you mean 'XIntc_LookupConfig'? [-Wimplicit-function-declaration]
+  iic_conf = XIic_LookupConfig(IIC_dev);
+             ^~~~~~~~~~~~~~~~~
+             XIntc_LookupConfig
+../src/2Clicks.c:151:31: error: 'IIC_dev' undeclared (first use in this function)
+  iic_conf = XIic_LookupConfig(IIC_dev);
+                               ^~~~~~~
+../src/2Clicks.c:152:12: warning: implicit declaration of function 'XIic_CfgInitialize'; did you mean 'XGpio_CfgInitialize'? [-Wimplicit-function-declaration]
+  Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+            ^~~~~~~~~~~~~~~~~~
+            XGpio_CfgInitialize
+../src/2Clicks.c:152:32: error: 'iic' undeclared (first use in this function)
+  Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+                                ^~~
+../src/2Clicks.c:159:29: error: 'Gpio_MikroBus' undeclared (first use in this function)
+  Status = XGpio_Initialize(&Gpio_MikroBus, GPIO_DEVICE_ID_MIKROBUS);
+                             ^~~~~~~~~~~~~
+../src/2Clicks.c:166:29: error: 'gpio_led' undeclared (first use in this function); did you mean 'Gpio_MR'?
+  Status = XGpio_Initialize(&gpio_led, GPIO_DEVICE_ID_LED);
+                             ^~~~~~~~
+                             Gpio_MR
+../src/2Clicks.c:173:2: warning: implicit declaration of function 'XIic_SetSendHandler'; did you mean 'XUartLite_SetSendHandler'? [-Wimplicit-function-declaration]
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+  ^~~~~~~~~~~~~~~~~~~
+  XUartLite_SetSendHandler
+../src/2Clicks.c:173:35: error: 'XIic_Handler' undeclared (first use in this function); did you mean 'XNullHandler'?
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+                                   ^~~~~~~~~~~~
+                                   XNullHandler
+../src/2Clicks.c:173:48: error: expected ')' before 'SendHandler'
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+                                                ^~~~~~~~~~~~
+                                                )
+../src/2Clicks.c:174:2: warning: implicit declaration of function 'XIic_SetRecvHandler'; did you mean 'XUartLite_SetRecvHandler'? [-Wimplicit-function-declaration]
+  XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+  ^~~~~~~~~~~~~~~~~~~
+  XUartLite_SetRecvHandler
+../src/2Clicks.c:174:48: error: expected ')' before 'ReceiveHandler'
+  XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+                                                ^~~~~~~~~~~~~~~
+                                                )
+../src/2Clicks.c:175:2: warning: implicit declaration of function 'XIic_SetStatusHandler'; did you mean 'XSpi_SetStatusHandler'? [-Wimplicit-function-declaration]
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+  ^~~~~~~~~~~~~~~~~~~~~
+  XSpi_SetStatusHandler
+../src/2Clicks.c:175:36: error: 'XIic_StatusHandler' undeclared (first use in this function); did you mean 'XSpi_StatusHandler'?
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+                                    ^~~~~~~~~~~~~~~~~~
+                                    XSpi_StatusHandler
+../src/2Clicks.c:175:55: error: expected ')' before 'StatusHandler'
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+                                                       ^~~~~~~~~~~~~~
+                                                       )
+../src/2Clicks.c:197:6: warning: implicit declaration of function 'XIic_SetAddress' [-Wimplicit-function-declaration]
+      XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+      ^~~~~~~~~~~~~~~
+../src/2Clicks.c:197:28: error: 'XII_ADDR_TO_SEND_TYPE' undeclared (first use in this function)
+      XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+                            ^~~~~~~~~~~~~~~~~~~~~
+../src/2Clicks.c:197:51: error: 'IIC_AFE_ADDR' undeclared (first use in this function); did you mean 'BASE_ADDR'?
+      XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+                                                   ^~~~~~~~~~~~
+                                                   BASE_ADDR
+../src/2Clicks.c:198:6: warning: implicit declaration of function 'XIic_SetOptions'; did you mean 'XIntc_SetOptions'? [-Wimplicit-function-declaration]
+      XIic_SetOptions(&iic, XII_REPEATED_START_OPTION);
+      ^~~~~~~~~~~~~~~
+      XIntc_SetOptions
+../src/2Clicks.c:198:28: error: 'XII_REPEATED_START_OPTION' undeclared (first use in this function); did you mean 'XSP_MASTER_OPTION'?
+      XIic_SetOptions(&iic, XII_REPEATED_START_OPTION);
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~
+                            XSP_MASTER_OPTION
+../src/2Clicks.c:202:6: warning: implicit declaration of function 'XIic_Start'; did you mean 'XIntc_Start'? [-Wimplicit-function-declaration]
+      XIic_Start(&iic);
+      ^~~~~~~~~~
+      XIntc_Start
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:448:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:37:01 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:58: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:46: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c:84:18: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ void SendHandler(XIic *InstancePtr);
+                  ^~~~
+                  XIntc
+../src/2Clicks.c:85:21: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ void ReceiveHandler(XIic *InstancePtr);
+                     ^~~~
+                     XIntc
+../src/2Clicks.c:86:20: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ void StatusHandler(XIic *InstancePtr, int Event);
+                    ^~~~
+                    XIntc
+../src/2Clicks.c:98:1: error: unknown type name 'XIic'; did you mean 'XIntc'?
+ XIic     iic;
+ ^~~~
+ XIntc
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:166:2: error: 'iic_conf' undeclared (first use in this function); did you mean 'viscanf'?
+  iic_conf = XIic_LookupConfig(IIC_dev);
+  ^~~~~~~~
+  viscanf
+../src/2Clicks.c:166:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:166:13: warning: implicit declaration of function 'XIic_LookupConfig'; did you mean 'XIntc_LookupConfig'? [-Wimplicit-function-declaration]
+  iic_conf = XIic_LookupConfig(IIC_dev);
+             ^~~~~~~~~~~~~~~~~
+             XIntc_LookupConfig
+../src/2Clicks.c:167:12: warning: implicit declaration of function 'XIic_CfgInitialize'; did you mean 'XGpio_CfgInitialize'? [-Wimplicit-function-declaration]
+  Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+            ^~~~~~~~~~~~~~~~~~
+            XGpio_CfgInitialize
+../src/2Clicks.c:188:2: warning: implicit declaration of function 'XIic_SetSendHandler'; did you mean 'XUartLite_SetSendHandler'? [-Wimplicit-function-declaration]
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+  ^~~~~~~~~~~~~~~~~~~
+  XUartLite_SetSendHandler
+../src/2Clicks.c:188:35: error: 'XIic_Handler' undeclared (first use in this function); did you mean 'XNullHandler'?
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+                                   ^~~~~~~~~~~~
+                                   XNullHandler
+../src/2Clicks.c:188:48: error: expected ')' before 'SendHandler'
+  XIic_SetSendHandler(&iic, &iic, (XIic_Handler) SendHandler);
+                                                ^~~~~~~~~~~~
+                                                )
+../src/2Clicks.c:189:2: warning: implicit declaration of function 'XIic_SetRecvHandler'; did you mean 'XUartLite_SetRecvHandler'? [-Wimplicit-function-declaration]
+  XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+  ^~~~~~~~~~~~~~~~~~~
+  XUartLite_SetRecvHandler
+../src/2Clicks.c:189:48: error: expected ')' before 'ReceiveHandler'
+  XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+                                                ^~~~~~~~~~~~~~~
+                                                )
+../src/2Clicks.c:190:2: warning: implicit declaration of function 'XIic_SetStatusHandler'; did you mean 'XSpi_SetStatusHandler'? [-Wimplicit-function-declaration]
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+  ^~~~~~~~~~~~~~~~~~~~~
+  XSpi_SetStatusHandler
+../src/2Clicks.c:190:36: error: 'XIic_StatusHandler' undeclared (first use in this function); did you mean 'XSpi_StatusHandler'?
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+                                    ^~~~~~~~~~~~~~~~~~
+                                    XSpi_StatusHandler
+../src/2Clicks.c:190:55: error: expected ')' before 'StatusHandler'
+  XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+                                                       ^~~~~~~~~~~~~~
+                                                       )
+../src/2Clicks.c:212:6: warning: implicit declaration of function 'XIic_SetAddress' [-Wimplicit-function-declaration]
+      XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+      ^~~~~~~~~~~~~~~
+../src/2Clicks.c:212:28: error: 'XII_ADDR_TO_SEND_TYPE' undeclared (first use in this function)
+      XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+                            ^~~~~~~~~~~~~~~~~~~~~
+../src/2Clicks.c:213:6: warning: implicit declaration of function 'XIic_SetOptions'; did you mean 'XIntc_SetOptions'? [-Wimplicit-function-declaration]
+      XIic_SetOptions(&iic, XII_REPEATED_START_OPTION);
+      ^~~~~~~~~~~~~~~
+      XIntc_SetOptions
+../src/2Clicks.c:213:28: error: 'XII_REPEATED_START_OPTION' undeclared (first use in this function); did you mean 'XSP_MASTER_OPTION'?
+      XIic_SetOptions(&iic, XII_REPEATED_START_OPTION);
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~
+                            XSP_MASTER_OPTION
+../src/2Clicks.c:217:6: warning: implicit declaration of function 'XIic_Start'; did you mean 'XIntc_Start'? [-Wimplicit-function-declaration]
+      XIic_Start(&iic);
+      ^~~~~~~~~~
+      XIntc_Start
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:463:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:37:30 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:71: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:59: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:179:2: error: 'iic_conf' undeclared (first use in this function); did you mean 'viscanf'?
+  iic_conf = XIic_LookupConfig(IIC_dev);
+  ^~~~~~~~
+  viscanf
+../src/2Clicks.c:179:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:476:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:38:44 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:176:2: error: 'iic_conf' undeclared (first use in this function); did you mean 'viscanf'?
+  iic_conf = XIic_LookupConfig(IIC_dev);
+  ^~~~~~~~
+  viscanf
+../src/2Clicks.c:176:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:453:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:39:35 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:138:9: error: conflicting types for 'Status'
+     u32 Status;
+         ^~~~~~
+../src/2Clicks.c:136:6: note: previous declaration of 'Status' was here
+  int Status;
+      ^~~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:464:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+13:39:44 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:463:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: ./src/2Clicks.o: in function `main':
+C:\Users\jeanchri\SDK2\2Clicks_Alc_LED\Debug/../src/2Clicks.c:185: undefined reference to `SetUpInterruptSystem'
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: C:\Users\jeanchri\SDK2\2Clicks_Alc_LED\Debug/../src/2Clicks.c:208: undefined reference to `SendHandler'
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: C:\Users\jeanchri\SDK2\2Clicks_Alc_LED\Debug/../src/2Clicks.c:209: undefined reference to `ReceiveHandler'
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: C:\Users\jeanchri\SDK2\2Clicks_Alc_LED\Debug/../src/2Clicks.c:210: undefined reference to `StatusHandler'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: 2Clicks_Alc_LED.elf] Error 1
+13:40:12 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:463:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:567:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  21372	    948	   3624	  25944	   6558	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+13:40:51 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:494:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:598:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  21372	    948	   3624	  25944	   6558	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:11:30 **** Auto Build of configuration Debug for project Alcohol2 ****
+make all 
+make: Nothing to be done for 'all'.
+15:11:35 **** Clean-only build of configuration Debug for project 2Clicks_Alc_LED ****
+make clean 
+rm -rf  ./src/2Clicks.o ./src/platform.o  ./src/2Clicks.d ./src/platform.d  2Clicks_Alc_LED.elf.size  2Clicks_Alc_LED.elf
+' '
+15:11:37 **** Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:494:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:598:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  21372	    948	   3624	  25944	   6558	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:13:43 **** Incremental Build of configuration Debug for project Alcohol2 ****
+make all 
+make: Nothing to be done for 'all'.
+15:14:22 **** Incremental Build of configuration Debug for project Alcohol2 ****
+make all 
+make: Nothing to be done for 'all'.
+15:16:02 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:68: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:56: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:496:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:600:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  21372	    948	   3624	  25944	   6558	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:16:08 **** Incremental Build of configuration Debug for project Alcohol2 ****
+make all 
+make: Nothing to be done for 'all'.
+15:16:26 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:17:54 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:288:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: in function `_crtinit':
+(.text+0x78): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: 2Clicks_Alc_LED.elf] Error 1
+15:22:04 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:400:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:515:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15864	    900	   3492	  20256	   4f20	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:22:13 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:29:21 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:185:1: warning: "/*" within comment [-Wcomment]
+ /**********************************START PROGRAM********************************/
+  
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:402:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:517:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  12316	    888	   3492	  16696	   4138	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:29:31 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:160:2: error: 'iic_conf' undeclared (first use in this function); did you mean 'viscanf'?
+  iic_conf = XIic_LookupConfig(IIC_dev);
+  ^~~~~~~~
+  viscanf
+../src/2Clicks.c:160:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:402:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+15:29:57 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:404:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:519:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  16960	    936	   3616	  21512	   5408	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:30:46 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:424:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:539:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  18096	    936	   3616	  22648	   5878	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:30:52 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:32:27 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:442:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:557:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20860	    948	   3624	  25432	   6358	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:32:33 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:34:40 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:442:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:557:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20860	    948	   3624	  25432	   6358	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:35:15 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:443:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:558:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23884	    948	   3624	  28456	   6f28	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:35:19 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:35:58 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:36:38 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:444:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:559:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23884	    948	   3624	  28456	   6f28	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:36:48 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:446:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:561:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23884	    948	   3624	  28456	   6f28	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:37:45 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:39:43 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:440:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:555:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23764	    948	   3624	  28336	   6eb0	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:40:15 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:51:49 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:440:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:699:1: error: expected declaration or statement at end of input
+ }
+ ^
+At top level:
+../src/2Clicks.c:695:7: warning: 'SendHandler' defined but not used [-Wunused-function]
+  void SendHandler(XIic *InstancePtr)
+       ^~~~~~~~~~~
+../src/2Clicks.c:689:7: warning: 'ReceiveHandler' defined but not used [-Wunused-function]
+  void ReceiveHandler(XIic *InstancePtr)
+       ^~~~~~~~~~~~~~
+../src/2Clicks.c:684:7: warning: 'StatusHandler' defined but not used [-Wunused-function]
+  void StatusHandler(XIic *InstancePtr, int Event)
+       ^~~~~~~~~~~~~
+../src/2Clicks.c:654:5: warning: 'SetUpInterruptSystem' defined but not used [-Wunused-function]
+ int SetUpInterruptSystem()
+     ^~~~~~~~~~~~~~~~~~~~
+../src/2Clicks.c:647:10: warning: 'concatenate' defined but not used [-Wunused-function]
+ unsigned concatenate(unsigned x, unsigned y) {
+          ^~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+15:53:35 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:440:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:555:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24412	    948	   3624	  28984	   7138	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:55:07 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25368	    948	   3620	  29936	   74f0	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:55:13 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:58:08 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25340	    948	   3624	  29912	   74d8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:58:12 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:59:03 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25324	    948	   3624	  29896	   74c8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+15:59:07 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+15:59:54 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25340	    948	   3624	  29912	   74d8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+16:00:24 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+16:03:00 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25260	    948	   3624	  29832	   7488	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+17:03:42 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25756	    948	   3624	  30328	   7678	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+17:14:24 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25804	    948	   3624	  30376	   76a8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+17:15:10 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+17:44:57 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25804	    948	   3624	  30376	   76a8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:03:29 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:14:59 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25840	    948	   3620	  30408	   76c8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:18:17 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25736	    948	   3620	  30304	   7660	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:19:05 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25752	    948	   3620	  30320	   7670	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:19:23 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:21:04 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25868	    948	   3624	  30440	   76e8	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:22:40 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25780	    948	   3624	  30352	   7690	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:22:58 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:23:31 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:24:08 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25780	    948	   3624	  30352	   7690	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:24:38 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:25:55 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25780	    948	   3624	  30352	   7690	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:26:37 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25704	    948	   3620	  30272	   7640	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:27:03 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:27:50 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25704	    948	   3620	  30272	   7640	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:27:54 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:28:21 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25732	    948	   3624	  30304	   7660	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:28:39 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25732	    948	   3624	  30304	   7660	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:28:43 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:29:42 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:34:41 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:622:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25732	    948	   3624	  30304	   7660	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+18:34:49 **** Auto Build of configuration Debug for project LED_BarGraph ****
+make all 
+'Building file: ../src/LED_BarGraph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/LED_BarGraph.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/LED_BarGraph.d" -MT"src/LED_BarGraph.o" -o "src/LED_BarGraph.o" "../src/LED_BarGraph.c"
+../src/LED_BarGraph.c: In function 'Mikro_BarGraph':
+../src/LED_BarGraph.c:474:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+'Finished building: ../src/LED_BarGraph.c'
+' '
+'Building target: LED_BarGraph.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LED_BarGraph.elf"  ./src/LED_BarGraph.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LED_BarGraph.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size LED_BarGraph.elf  |tee "LED_BarGraph.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  17908	    900	   3344	  22152	   5688	LED_BarGraph.elf
+'Finished building: LED_BarGraph.elf.size'
+' '
+18:58:28 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+19:26:49 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:51:22 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+18:52:11 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.
+19:05:45 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:674:4: warning: implicit declaration of function 'Range' [-Wimplicit-function-declaration]
+    Range(Alcohol_Val);
+    ^~~~~
+../src/2Clicks.c:674:10: error: 'Alcohol_Val' undeclared (first use in this function); did you mean 'Alcohol_val'?
+    Range(Alcohol_Val);
+          ^~~~~~~~~~~
+          Alcohol_val
+../src/2Clicks.c:674:10: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:612:7: warning: variable 'Alcohol_val' set but not used [-Wunused-but-set-variable]
+   u16 Alcohol_val = 0;
+       ^~~~~~~~~~~
+../src/2Clicks.c: In function 'Ranges':
+../src/2Clicks.c:809:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+19:05:59 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:118:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:507:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:674:4: warning: implicit declaration of function 'Ranges' [-Wimplicit-function-declaration]
+    Ranges(Alcohol_Val);
+    ^~~~~~
+../src/2Clicks.c:674:11: error: 'Alcohol_Val' undeclared (first use in this function); did you mean 'Alcohol_val'?
+    Ranges(Alcohol_Val);
+           ^~~~~~~~~~~
+           Alcohol_val
+../src/2Clicks.c:674:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:612:7: warning: variable 'Alcohol_val' set but not used [-Wunused-but-set-variable]
+   u16 Alcohol_val = 0;
+       ^~~~~~~~~~~
+../src/2Clicks.c: In function 'Ranges':
+../src/2Clicks.c:809:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+19:06:28 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:119:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:508:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:675:11: error: 'Alcohol_Val' undeclared (first use in this function); did you mean 'Alcohol_val'?
+    Ranges(Alcohol_Val);
+           ^~~~~~~~~~~
+           Alcohol_val
+../src/2Clicks.c:675:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:613:7: warning: variable 'Alcohol_val' set but not used [-Wunused-but-set-variable]
+   u16 Alcohol_val = 0;
+       ^~~~~~~~~~~
+../src/2Clicks.c: In function 'Ranges':
+../src/2Clicks.c:810:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+19:07:44 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:119:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:508:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:675:11: error: 'Alcohol_Val' undeclared (first use in this function); did you mean 'Alcohol_val'?
+    Ranges(Alcohol_Val);
+           ^~~~~~~~~~~
+           Alcohol_val
+../src/2Clicks.c:675:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:613:7: warning: variable 'Alcohol_val' set but not used [-Wunused-but-set-variable]
+   u16 Alcohol_val = 0;
+       ^~~~~~~~~~~
+../src/2Clicks.c: In function 'Ranges':
+../src/2Clicks.c:811:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+19:08:05 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:119:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:508:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:675:11: error: 'Alcohol_Val' undeclared (first use in this function); did you mean 'Alcohol_val'?
+    Ranges(Alcohol_Val);
+           ^~~~~~~~~~~
+           Alcohol_val
+../src/2Clicks.c:675:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/2Clicks.c:613:7: warning: variable 'Alcohol_val' set but not used [-Wunused-but-set-variable]
+   u16 Alcohol_val = 0;
+       ^~~~~~~~~~~
+../src/2Clicks.c: In function 'Ranges':
+../src/2Clicks.c:811:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:26: src/2Clicks.o] Error 1
+19:08:48 **** Auto Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+'Building file: ../src/2Clicks.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/2Clicks.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/2Clicks.d" -MT"src/2Clicks.o" -o "src/2Clicks.o" "../src/2Clicks.c"
+../src/2Clicks.c:72: warning: "BUFFER_SIZE" redefined
+ #define BUFFER_SIZE  6
+ 
+../src/2Clicks.c:55: note: this is the location of the previous definition
+ #define BUFFER_SIZE   3
+ 
+../src/2Clicks.c: In function 'main':
+../src/2Clicks.c:119:7: warning: unused variable 'input' [-Wunused-variable]
+  char input;
+       ^~~~~
+../src/2Clicks.c: In function 'Mikro_BarGraph':
+../src/2Clicks.c:508:6: warning: variable 'Test' set but not used [-Wunused-but-set-variable]
+  u32 Test;
+      ^~~~
+../src/2Clicks.c: In function 'Ranges':
+../src/2Clicks.c:811:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+../src/2Clicks.c: In function 'MCP3221_CTRL':
+../src/2Clicks.c:623:5: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+  if (Status != XST_SUCCESS) {
+     ^
+'Finished building: ../src/2Clicks.c'
+' '
+'Building target: 2Clicks_Alc_LED.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "2Clicks_Alc_LED.elf"  ./src/2Clicks.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: 2Clicks_Alc_LED.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size 2Clicks_Alc_LED.elf  |tee "2Clicks_Alc_LED.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25760	    948	   3620	  30328	   7678	2Clicks_Alc_LED.elf
+'Finished building: 2Clicks_Alc_LED.elf.size'
+' '
+19:16:03 **** Incremental Build of configuration Debug for project 2Clicks_Alc_LED ****
+make all 
+make: Nothing to be done for 'all'.

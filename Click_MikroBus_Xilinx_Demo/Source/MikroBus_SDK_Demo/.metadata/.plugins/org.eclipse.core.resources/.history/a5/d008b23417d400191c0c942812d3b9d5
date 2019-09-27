@@ -1,0 +1,661 @@
+//********************************************
+/*
+	   ____  ____
+      /   /\/   /
+	 /___/  \  /
+     \   \   \/
+	  \   \
+	  /   /
+	 /___/   /\
+	 \   \  /  \
+	  \___\/\___\
+
+	Author: 		Jean-Christophe Owens (jeanchri)
+	Supervisor:		Jayson Bethurem
+	Date: 			Aug 13th 2019
+	Version:		1.0
+
+*/
+
+/***************************** Include Files **********************************/
+#include "xil_printf.h"
+#include "xparameters.h"
+#include <stdio.h>
+#include "xspi.h"
+#include "xspi_l.h"
+#include "xtmrctr.h"
+#include "xgpio.h"
+#include "xintc.h"
+#include "xuartlite.h"
+
+//External
+#include "MikroBus.h"
+
+/************************** Initialize Periphral ******************************/
+//Comment define if you do not need it
+
+#define TIMER
+#define GPIO
+#define SPI
+#define DELAY_TIM
+#define BIT_SHIFT
+#define BAR_GRAPH
+
+/**************************** Type Definitions ********************************/
+#define BUFFER_SIZE			3
+//Declaration of Write Buffer
+u32 WriteBuffer[BUFFER_SIZE] = {0x0F, 0xC0, 0xFF};
+
+/************************** Variable Definitions ******************************/
+
+XSpi 			Spi; 		/* The instance of the SPI device */
+XTmrCtr			Timer;
+XGpio			Gpio_Latch;
+XTmrCtr 		TimerCounterInst;  /* The instance of the Timer Counter */
+XIntc			Intr;
+XSpi_Config 	*ConfigPtr;
+/************************** Function Prototypes *******************************/
+
+int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr);
+int XTmrCtr_Initialize(XTmrCtr * InstancePtr, u16 DeviceId);
+void delay(int x);	//In milli_seconds
+uint16_t BitShift(uint16_t bit);
+int Mikro_BarGraph(u16 DeviceId, XSpi *SpiInstancePtr);
+void Latch_LED_hold();
+void Latch_LED_insert();
+void Master_Reset();
+void Over_Write_Buffer(u32 W2, u32 W1, u32 W0);
+void EasterEgg();
+
+
+int main(void)
+{
+	int Status;
+	char input;
+
+	xil_printf("Executing Program... \r\n\n");
+
+	/**********************************SETUP BLOCKS*************************************/
+
+#ifdef TIMER
+//Start timer to shift each bit
+	Status = XTmrCtr_Initialize(&Timer, TIMER_DEVICE_ID);
+	if (Status != XST_SUCCESS) {
+	xil_printf("Timer Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = XTmrCtr_SelfTest(&Timer, TIMER_COUNTER_0);
+		if (Status != XST_SUCCESS) {
+			xil_printf("Timer Initialization Failed\r\n");
+			return XST_FAILURE;
+		}
+#endif
+
+
+
+#ifdef GPIO
+/* Initialize the GPIO driver -----LED TESTER----- */
+//	Status = XGpio_Initialize(&Gpio, GPIO_DEVICE_ID_LED_LED);
+//	if (Status != XST_SUCCESS) {
+//		xil_printf("Gpio Initialization Failed\r\n");
+//		return XST_FAILURE;
+//	}
+////Set as an Outpus
+//	XGpio_SetDataDirection(&Gpio, LED_CHANNEL, 0);
+
+//Mikro Bus Output
+	Status = XGpio_Initialize(&Gpio_Latch, XPAR_AXI_GPIO_0_DEVICE_ID);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Gpio Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+//Set as an Outpus
+	XGpio_SetDataDirection(&Gpio_Latch, MIKRO_CHANNEL, 0);
+
+#endif
+
+
+
+#ifdef SPI
+//Spi
+	Status = Spi_Test(SPI_DEVICE_ID, &Spi);
+	if (Status != XST_SUCCESS) {
+	xil_printf("Spi  Failed TRY AGAIN\r\n");
+	return XST_FAILURE;
+	}
+#endif
+
+
+
+/**********************************START PROGRAM********************************/
+/********************************** 1st Trial Test *****************************
+Set Low then Hgih
+	Master_Reset();
+	 delay(1000);
+
+Hold latch off until data has been submitted
+	 Latch_LED_hold();
+Shift Regs
+	Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+
+Latches Enable
+	Latch_LED_insert();
+********************************************************************************/
+
+
+	xil_printf("Program Initiating... \r\n\n");
+
+
+	xil_printf("******** Enter in Console Commands Here********* \r\n");
+	xil_printf("1) 1st Led On Green\r\n");
+	xil_printf("2) 2nd Led On Green\r\n");
+	xil_printf("3) 3rd Led On Green\r\n");
+	xil_printf("4) 3rd Led On Green\r\n");
+	xil_printf("5) 3rd Led On Green\r\n");
+	xil_printf("6) 3rd Led On Green\r\n");
+	xil_printf("7) 3rd Led On Green\r\n");
+	xil_printf("8) 3rd Led On Green\r\n");
+	xil_printf("9) 3rd Led On Green\r\n");
+	xil_printf("0) 3rd Led On Green\r\n\n");
+
+	xil_printf("r) All Red\r\n");
+	xil_printf("y) All Yellow\r\n");
+	xil_printf("g) All Green\r\n");
+
+	xil_printf("j) Easter Egg\r\n");
+	xil_printf("**************************************** \r\n\n");
+
+//delay(x) is in Milli_seconds
+	while(1){
+
+		input =inbyte();
+
+		if (input == '1'){
+		/*Write the 1st LED as Green					| G000000000*/
+			delay(1000);
+			Over_Write_Buffer(0x00, 0x00, 0x01);
+		 }
+
+		if (input == '2'){
+		/*Write the 1st 2 LED as Green					| GG00000000*/
+			delay(1000);
+			Over_Write_Buffer(0x00, 0x00, 0x03);
+		 }
+
+		if (input == '3'){
+			delay(1000);
+		/*Write the 1st 3 LED as Green					| GGG0000000*/
+			Over_Write_Buffer(0x00, 0x00, 0x07);
+		 }
+
+		if (input == '4'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green					| GGGG000000*/
+			Over_Write_Buffer(0x00, 0x00, 0x0F);
+		 }
+
+		if (input == '5'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green & Y				| GGGGY00000*/
+			Over_Write_Buffer(0x00, 0x40, 0x1F);
+		 }
+
+		if (input == '6'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green & 2Y				| GGGGYY0000 */
+			Over_Write_Buffer(0x00, 0xC0, 0x3F);
+		 }
+		if (input == '7'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green & 3Y				| GGGGYYY000*/
+			Over_Write_Buffer(0x01, 0xC0, 0x7F);
+		 }
+
+		if (input == '8'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green & Y				| GGGGYYYY00*/
+			Over_Write_Buffer(0x03, 0xC0, 0xFF);
+		 }
+
+		if (input == '9'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green & Y	& R			| GGGGYYYYR0*/
+			Over_Write_Buffer(0x07, 0xC0, 0xFF);
+		 }
+
+		if (input == '0'){
+			delay(1000);
+		/*Write the 1st 4 LED as Green & Y	& 2R		| GGGGYYYYRR*/
+			Over_Write_Buffer(0x0F, 0xC0, 0xFF);
+		 }
+
+
+//********************************************************
+		if (input == 'g'){
+		/*Write the All Green							| GGGGGGGGGG*/
+			delay(1000);
+			Over_Write_Buffer(0x00, 0x03, 0xFF);
+			xil_printf("\e[1;32mGreeeen :D \r\n\n\e[1;37m");
+		 }
+		if (input == 'y'){
+			/*Write All Yellow							| GGGGGGGGGG*/
+			delay(1000);
+			Over_Write_Buffer(0xFF, 0xFF, 0xFF);
+			xil_printf("\e[1;33mYelllllllow :D \r\n\n\e[1;37m");
+
+		 }
+		if (input == 'r'){
+			/*Write All Red								| RRRRRRRRRR*/
+			delay(1000);
+			Over_Write_Buffer(0xFF, 0xFC, 0x00);
+			xil_printf("\e[1;31mRed :D \r\n\n\e[1;37m");
+		 }
+		if (input == 'd'){
+		/*Write Default									| GGGGYYYYRR */
+			Over_Write_Buffer(0x0F, 0xC0, 0xFF);
+			xil_printf("\e[0;36mDefault :D \r\n\n\e[1;37m");
+		 }
+//****************Easter Egg*************************
+		//
+		if (input == 'j'){
+		/*Write the 1st value to LED*/
+			EasterEgg();
+		 }
+
+		if (input == 'q'){
+			/*Write the 1st value to LED*/
+				Over_Write_Buffer(0x00, 0x00, 0x00);
+				break;
+		}
+
+
+	}
+	xil_printf("---Exiting main---\n\r");
+    return 0;
+}
+
+/*****************************************************************************/
+
+
+
+
+
+
+
+/**************************************************************************
+*
+* This function does a selftest and loopback test on the SPI device and
+* XSpi driver as an example. The purpose of this function is to illustrate
+* how to use the XSpi component.
+*
+*
+* @param	DeviceId is the XPAR_<SPI_instance>_DEVICE_ID value from
+*		xparameters.h
+*
+* @return	XST_SUCCESS if successful, XST_FAILURE if unsuccessful
+*
+* @note		None
+*
+****************************************************************************/
+int Spi_Test(u16 DeviceId, XSpi *SpiInstancePtr)
+{
+	int Status;
+	u32 Enable_Sys;
+	u32 Control;
+	u32 TX;
+	u32 RX;
+//	u32 Chip;
+//	u32 Polarity;
+
+//	***************************** SETUP *************************************
+//Initialize block
+	XSpi_Initialize(SpiInstancePtr, SPI_DEVICE_ID);
+
+//	SpiInstancePtr->SendData = SendBufPtr;
+
+
+	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
+
+	ConfigPtr = XSpi_LookupConfig(DeviceId);
+	if (ConfigPtr == NULL) {
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+//Status of Device
+	Status = XSpi_CfgInitialize(SpiInstancePtr, ConfigPtr,(ConfigPtr->DeviceId));
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+
+//*******************************************************************************
+	 xil_printf("\e[0;31m*****************\e[1;37mXilinx\e[0;31m********************\e[1;32m\r\n");
+
+
+/*
+ * Note:
+ * 		DISABLE Loopback maybe??
+ * 1) Enable SPI
+ * 2) Inhibit transmit
+ * 3) Master Mode
+ * 4) Reset TX & RX fifo
+ */
+
+//ENABLE
+	Enable_Sys = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	Enable_Sys |= XSP_CR_ENABLE_MASK;
+	Enable_Sys &= ~XSP_CR_TRANS_INHIBIT_MASK;
+	XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, Enable_Sys);
+	 xil_printf("Enabled System... \r\n");
+
+//Make Master
+	 Control = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	 Control |= XSP_CR_MASTER_MODE_MASK;		//Make master mode
+	 Control |= XSP_CR_TXFIFO_RESET_MASK;		//Reset TX
+	 Control |= XSP_CR_RXFIFO_RESET_MASK;		//Reset RX
+	 XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, Control);
+	 xil_printf("Master Mode... \r\n");
+
+//TX
+	 TX = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	 TX |= XSP_CR_TXFIFO_RESET_MASK;			//Reset TX
+	 XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, TX);
+//	 xil_printf("TX: %x... \r\n", TX);
+
+
+//RX
+	 RX = XSpi_ReadReg(BASE_ADDR, XSP_CR_OFFSET);
+	 RX |= XSP_CR_TXFIFO_RESET_MASK;			//Reset TX
+	 XSpi_WriteReg(BASE_ADDR, XSP_CR_OFFSET, RX);
+//	 xil_printf("RX: %x... \r\n", RX);
+
+
+
+//*******************************************************************************
+//Start SPI
+	XSpi_Start(&Spi);
+	 xil_printf("\e[0;31m**************\e[1;37mRUNNING TEST\e[0;31m*****************\e[1;37m\r\n");
+
+	 // Disable Global interrupt to use polled mode operation
+	 XSpi_IntrGlobalDisable(&Spi);
+
+/*	Transfer = XSpi_Transfer(SpiInstancePtr, SendData, RecvData, BUFFER_SIZE);
+	xil_printf("Transfer Successful... \r\n");
+	xil_printf("SPi: %x \r\n Send: %x \r\n Recv: %x \r\n Byte: %d  \r\n\n", Transfer);
+xil_printf("	Spi: %x \r\n	SendData: %x \r\n	RecvData: %x \r\n	Byte: %x \r\n\n", Status);
+*******************************************/
+	return XST_SUCCESS;
+}
+
+
+
+  /*
+Make a timer for the Spi protocal
+Have it delay to 1000 ms and apply in spi
+Timer 0
+0-100000
+and reset
+*/
+
+#ifdef DELAY_TIM
+void delay(int x){
+//Set a timer incremental (Change value of x [MS])
+	u32 Timer_Value = 0;
+	u32 ResetValue = 0;
+
+	x= (x)*(25000);
+
+	XTmrCtr_Enable(TIMER_BASE, TIMER_COUNTER_0);
+
+	//Counter timer
+	XTmrCtr_SetResetValue(&Timer, TIMER_COUNTER_0, ResetValue);
+	XTmrCtr_Reset(&Timer, TIMER_COUNTER_0);
+	XTmrCtr_Start(&Timer, TIMER_COUNTER_0);
+	Timer_Value = XTmrCtr_GetValue(&Timer, TIMER_COUNTER_0);
+
+	while (1) {
+		Timer_Value = XTmrCtr_GetValue(&Timer, TIMER_COUNTER_0);
+		//compare the value of timer
+			if (Timer_Value > x){
+//				xil_printf("Timer: %d \r\n", Timer_Value);
+				//Read the stopped value
+				XTmrCtr_Stop(&Timer,TIMER_COUNTER_0);
+				XTmrCtr_Reset(&Timer, TIMER_COUNTER_0);
+				break;
+			}
+	}
+	XTmrCtr_Disable(TIMER_BASE, TIMER_COUNTER_0);
+
+}
+#endif
+//*******************************************************************************
+
+
+  /*
+Make a bit shifter for ship
+make a transfer after each
+Split up into two
+
+*/
+#ifdef BIT_SHIFT
+uint16_t BitShift(u16 bit){
+
+	u8 first_byte;
+	u8 second_byte;
+
+	//Start shift
+	second_byte = (uint8_t) bit;		//Cast the value to a u8
+	bit = second_byte &(bit << 8);
+	first_byte = bit;
+	return first_byte;
+}
+#endif
+//*******************************************************************************
+
+
+
+
+
+
+
+/*Make a test file to check spi flow
+8 bit shift register to mimic the chip
+return in main
+*/
+#ifdef BAR_GRAPH
+int Mikro_BarGraph(u16 DeviceId, XSpi *SpiInstancePtr){
+
+
+	int i;
+	u32 Test;
+
+//************************** TEST 1 *********************************************
+	 xil_printf("Test Transfer ... \r\n");
+
+//Reset mode
+	 Master_Reset();
+
+
+
+
+//write DTR Register
+//	 XSP_DTR_OFFSET
+	XSpi_WriteReg(ConfigPtr->BaseAddress, XSP_CR_OFFSET, 0x1A2);
+	Test = XSpi_ReadReg(BASE_ADDR, XSP_DTR_OFFSET);
+//	xil_printf("DTR: %x  \n\r", Test);
+
+
+	//Loop to store Data
+	for(i=0;i<3;i++){ // write in bytes to send
+		XSpi_WriteReg( BASE_ADDR, XSP_DTR_OFFSET, WriteBuffer[i]);
+	}
+
+	return XST_SUCCESS;
+}
+#endif
+//*******************************************************************************
+
+
+
+
+void Latch_LED_hold(){
+	u32 Latch;
+
+ //DIS-ASSERT Chip Select
+	 Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+	 Latch &= ~0x01;
+	 XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+	 xil_printf("Latch Off: %x... \r\n", Latch);
+//	 Delay to give time***********************8
+	 delay(100);
+}
+
+
+
+ void Latch_LED_insert(){
+	 u32 Latch;
+
+	 //ASSERT Chip Select
+	 Latch =  XSpi_ReadReg(BASE_ADDR, XSP_SSR_OFFSET);
+	 Latch |= 0x01;
+	 XSpi_WriteReg(BASE_ADDR, XSP_SSR_OFFSET, Latch);
+	 xil_printf("Latch On: %x... \r\n\n", Latch);
+	 delay(100);
+}
+
+
+
+void Master_Reset(){
+	 XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, ~0x1);
+//	 xil_printf("MR LOW _HIGH");
+	 XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, 0x1);
+}
+
+
+void Over_Write_Buffer(u32 W2, u32 W1, u32 W0){
+	WriteBuffer[0] = W2;
+	WriteBuffer[1] = W1;
+	WriteBuffer[2] = W0;
+	Latch_LED_hold();
+	Mikro_BarGraph(SPI_DEVICE_ID, &Spi);
+	Latch_LED_insert();
+}
+
+
+/*
+int PWM_Light(XTmrCtr * InstancePtr){
+
+	u8  DutyCycle;
+//	u8  Div;
+	u32 Period;
+	u32 HighTime;
+	u32 Max_100 = 1;
+
+
+//	 Enable PWM
+	XTmrCtr_PwmEnable(InstancePtr);
+
+//	Div = DUTYCYCLE_DIVISOR;
+
+//	 Configure PWM
+	Period = PWM_PERIOD;
+	HighTime = PWM_PERIOD / Max_100;
+	DutyCycle = XTmrCtr_PwmConfigure(InstancePtr, Period, HighTime);
+
+	xil_printf("PWM Configured for Duty Cycle = %d \r\n", DutyCycle);
+
+//	Disable PWM
+	XTmrCtr_PwmDisable(InstancePtr);
+	return XST_SUCCESS;
+}
+
+void reset_stuff(XTmrCtr * InstancePtr){
+	//For LED bliking
+
+	XTmrCtr_Reset(InstancePtr,XTC_TIMER_0);
+	XTmrCtr_Reset(InstancePtr,XTC_TIMER_1);
+}
+*/
+
+
+void EasterEgg(){
+//	****************** Green ***************************
+	while(1){
+				xil_printf("\e[0;36m EasterEgg \r\n\n\e[1;37m");
+				Over_Write_Buffer(0x00, 0x00, 0x01);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x03);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x07);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x0F);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x1F);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x3F);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x7F);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0xFF);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x01, 0xFF);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x03, 0xFF);
+				delay(50);
+//********************* MAX ***************************
+				Over_Write_Buffer(0xFF, 0xFC, 0x00);
+				delay(10);
+				Over_Write_Buffer(0x00, 0x03, 0xFF);
+				delay(10);
+				Over_Write_Buffer(0xFF, 0xFF, 0xFF);
+				delay(10);
+				Over_Write_Buffer(0x00, 0x03, 0xFF);
+				delay(10);
+				Over_Write_Buffer(0xFF, 0xFC, 0x00);
+				delay(10);
+//******************** ~Green *************************
+				Over_Write_Buffer(0x00, 0x01, 0xFE);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0xFD);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x7C);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x3B);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x1A);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x0F);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x07);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x03);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x01);
+				delay(50);
+
+				Over_Write_Buffer(0x00, 0x00, 0x00);
+				delay(50);
+	}
+}
+
+
+
+

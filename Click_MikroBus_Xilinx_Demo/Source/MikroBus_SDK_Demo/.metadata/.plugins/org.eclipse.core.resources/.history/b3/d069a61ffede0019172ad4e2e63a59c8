@@ -1,0 +1,250 @@
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+//#include "platform.h"
+#include "xil_printf.h"
+#include "xiic.h"
+#include "xintc.h"
+#include "xil_exception.h"
+#include "xgpio.h"
+#include "sleep.h"
+#include "MikroBus.h"
+
+#define IIC_dev 			XPAR_MIKROBUS_AXI_IIC_MIKROBUS_DEVICE_ID
+#define int_dev 			XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID
+#define IIC_ADC_ADDR		0x4D
+#define IIC_AFE_ADDR	    0x48
+#define INTC_DEVICE_INT_ID	XPAR_INTC_0_IIC_0_VEC_ID
+#define BUFFER_SIZE		6
+
+#define GPIO_DEVICE_ID_MIKROBUS		XPAR_MIKROBUS_AXI_GPIO_MIKROBUS_DEVICE_ID
+#define LED 0x01   /* Assumes bit 0 of GPIO is connected to an LED  */
+
+XGpio 			gpio_led; /* The Instance of the GPIO Driver */
+XGpio			Gpio_MikroBus;
+XIic  			iic;
+XIntc 			InterruptController;
+
+volatile u8 TransmitComplete;
+volatile u8 ReceiveComplete;
+
+int MCP3221_CTRL ();
+int SetUpInterruptSystem();
+void SendHandler(XIic *InstancePtr);
+void ReceiveHandler(XIic *InstancePtr);
+void StatusHandler(XIic *InstancePtr, int Event);
+unsigned concatenate(unsigned x, unsigned y);
+
+int main()
+{
+    u32 Status;
+    XIic_Config *iic_conf;
+
+//	init_platform();
+
+    xil_printf("Alcohol Test 2 \n\r");
+
+    XIntc_Initialize(&InterruptController, int_dev);
+	SetUpInterruptSystem();
+	iic_conf = XIic_LookupConfig(IIC_dev);
+	Status =  XIic_CfgInitialize(&iic, iic_conf, iic_conf->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		 xil_printf("XIic initial is fail \n \r") ;
+		return XST_FAILURE;
+	}
+	Status = XGpio_Initialize(&Gpio_MikroBus, GPIO_DEVICE_ID_MIKROBUS);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Gpio Initialization Faigpio_led\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = XGpio_Initialize(&gpio_led, GPIO_DEVICE_ID_LED);
+	if (Status != XST_SUCCESS) {
+		xil_printf("LED Gpio Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+
+	XIic_SetSendHandler(&iic, &iic,	(XIic_Handler) SendHandler);
+	XIic_SetRecvHandler(&iic, &iic, (XIic_Handler) ReceiveHandler);
+	XIic_SetStatusHandler(&iic, &iic,(XIic_StatusHandler) StatusHandler);
+
+    //XIic_Reset(&iic);
+
+    //Set direction as an Output
+    XGpio_SetDataDirection(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0);
+
+    //Set direction as an Output
+    XGpio_SetDataDirection(&gpio_led, LED_CHANNEL, 0);
+    //XGpio_DiscreteWrite(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0x00);
+    XGpio_DiscreteWrite(&gpio_led, LED_CHANNEL, 0x0F);
+    xil_printf("Light LEDs \r\n");
+
+    /////////////////////////////////////////////////
+
+    // Select AFE with RST pin
+    XGpio_DiscreteWrite(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0x00); //0x00 for AFE and 0x01 for ADC
+    xil_printf("AFE Enabled \r\n");
+    // Set IIC address to AFE address
+    XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_AFE_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+    XIic_SetOptions(&iic, XII_REPEATED_START_OPTION);
+
+    // Write AFE TIA_CN Register
+
+    XIic_Start(&iic);
+
+
+    /////////////////////////////////////////////////
+
+
+
+    MCP3221_CTRL ();
+
+    while(1){
+
+    }
+
+
+ //   cleanup_platform();
+    return 0;
+}
+
+
+int MCP3221_CTRL ()
+{
+  u32  Status ;
+  u8 SendBuffer [2];
+  u8 RecvBuffer [2];
+  u16 Alcohol_val = 0;
+//  u8 Options;
+
+  TransmitComplete = 1;
+  ReceiveComplete = 1;
+
+  SendBuffer[0]= 0x10;
+  SendBuffer[1]= 0x03;
+
+  XIic_MasterSend(&iic, SendBuffer, 2);
+	if (Status != XST_SUCCESS) {
+			return XST_FAILURE;
+	}
+	while (TransmitComplete) { // || (XIic_IsIicBusy(&iic) == TRUE)) {
+  }
+  //XIic_Stop(&iic);
+	// XIic_Reset(&iic);
+  usleep(10000);
+
+  // Write AFE REF_CN Register
+  //XIic_Start(&iic);
+  SendBuffer[0]= 0x11;
+  SendBuffer[1]= 0x20;
+  TransmitComplete = 1;
+
+  XIic_MasterSend(&iic, SendBuffer, 2);
+  while (TransmitComplete) { // || (XIic_IsIicBusy(&iic) == TRUE)) {
+  }
+  TransmitComplete = 1;
+
+
+  //XIic_Reset(&iic);
+  usleep(10000);
+  // Switch to ADC to read sensor values
+  // Set IIC address to ADC address
+
+  XIic_SetAddress(&iic, XII_ADDR_TO_SEND_TYPE, IIC_ADC_ADDR); //IIC_AFE_ADDR or IIC_ADC_ADDR
+  // Select ADC with RST pin
+  //XIic_Start(&iic);
+/*  Status = XIic_Start(&iic);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}*/
+  XGpio_DiscreteWrite(&Gpio_MikroBus, GPIO_MENB_CHANNEL, 0x01); //0x00 for AFE and 0x01 for ADC
+  xil_printf("ADC Enabled \r\n");
+
+  XIic_MasterSend(&iic, SendBuffer, 0);
+  //while (TransmitComplete) { // || (XIic_IsIicBusy(&iic) == TRUE)) {
+  //}
+  TransmitComplete = 1;
+
+  while (1) {
+	  XIic_MasterRecv(&iic, RecvBuffer,  2);
+	  	  while ((ReceiveComplete)) {
+	  	  }
+	  sleep(1);
+	  ReceiveComplete = 1;
+	  Alcohol_val = concatenate(RecvBuffer[1], RecvBuffer[0]);
+	  xil_printf("Alcohol Value = %d\n\r", Alcohol_val);
+
+  }
+
+  usleep(1000);
+  XIic_Stop(&iic);
+
+ return XST_SUCCESS;
+}
+
+
+unsigned concatenate(unsigned x, unsigned y) {
+    unsigned pow = 10;
+    while(y >= pow)
+        pow *= 10;
+    return x * pow + y;
+}
+
+int SetUpInterruptSystem()
+{
+	int Status;
+
+	Status = XIntc_Connect(&InterruptController, INTC_DEVICE_INT_ID,
+				   (XInterruptHandler)XIic_InterruptHandler,
+				   &iic);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	Status = XIntc_Start(&InterruptController, XIN_REAL_MODE);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XIntc_Enable(&InterruptController, INTC_DEVICE_INT_ID);
+
+	Xil_ExceptionInit();
+
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+				(Xil_ExceptionHandler)XIntc_InterruptHandler,
+				&InterruptController);
+
+	Xil_ExceptionEnable();
+
+	return XST_SUCCESS;
+
+}
+
+ void StatusHandler(XIic *InstancePtr, int Event)
+{
+
+}
+
+ void ReceiveHandler(XIic *InstancePtr)
+{
+	ReceiveComplete = 0;
+	xil_printf("Data RXd \n\r");
+}
+
+ void SendHandler(XIic *InstancePtr)
+{
+	TransmitComplete = 0;
+	xil_printf("Data TXd \n\r");
+}
+
+
+
+

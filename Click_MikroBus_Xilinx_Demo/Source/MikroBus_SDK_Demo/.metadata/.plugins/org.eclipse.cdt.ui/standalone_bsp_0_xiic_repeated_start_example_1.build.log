@@ -1,0 +1,29 @@
+14:17:04 **** Build of configuration Debug for project standalone_bsp_0_xiic_repeated_start_example_1 ****
+make all 
+'Building file: ../src/xiic_repeated_start_example.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xiic_repeated_start_example.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/xiic_repeated_start_example.d" -MT"src/xiic_repeated_start_example.o" -o "src/xiic_repeated_start_example.o" "../src/xiic_repeated_start_example.c"
+../src/xiic_repeated_start_example.c: In function 'WriteData':
+../src/xiic_repeated_start_example.c:253:6: warning: variable 'BusBusy' set but not used [-Wunused-but-set-variable]
+  int BusBusy;
+      ^~~~~~~
+../src/xiic_repeated_start_example.c: In function 'ReadData':
+../src/xiic_repeated_start_example.c:337:6: warning: variable 'BusBusy' set but not used [-Wunused-but-set-variable]
+  int BusBusy;
+      ^~~~~~~
+'Finished building: ../src/xiic_repeated_start_example.c'
+' '
+'Building target: standalone_bsp_0_xiic_repeated_start_example_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "standalone_bsp_0_xiic_repeated_start_example_1.elf"  ./src/xiic_repeated_start_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_0_xiic_repeated_start_example_1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size standalone_bsp_0_xiic_repeated_start_example_1.elf  |tee "standalone_bsp_0_xiic_repeated_start_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15988	    816	   3372	  20176	   4ed0	standalone_bsp_0_xiic_repeated_start_example_1.elf
+'Finished building: standalone_bsp_0_xiic_repeated_start_example_1.elf.size'
+' '
+
+14:17:08 Build Finished (took 3s.142ms)
+
