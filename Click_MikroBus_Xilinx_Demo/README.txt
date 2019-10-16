@@ -1,7 +1,6 @@
 ******************************************
 Author: 		Jean-Christophe Owens
-USR:			jeanchri
-Supervisor:		Jayson Betherum
+USR:			jeow9028
 Date:			09/28/2019
 Project: 		MikroBus IP
 Board:			Arty s7-50
